@@ -1,41 +1,294 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family:Helvetica,sans-serif;
+body {
+font-family: Arial, sans-serif;
+}
+h3 {
+color: #555;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+}
+th, td {
+border: 0px solid black;
+padding: 8px;
+text-align: center;
+vertical-align: middle;
+}
+th {
+background-color: #f2f2f2;
+}
+.center {
+border: 5px solid;
+margin: auto;
+width: 50%;
+padding: 10px;
+}
+/* #footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+} */
+#header {
+padding: 10px;
+display: flex;
+justify-content: space-between; /*Căn các phần tử bên trong theo chiều ngang với khoảng cách đều nhau.*/
+align-items: center;
+background-color:#C4CCC6;
+}
+#header_line {
+background-color: #89997e4b;
+color: #555;
+text-align: center;
+padding: 6px 0;
+}
+#main-content {
+display: flex;
+}
+#left-sidebar, #right-content {
+padding: 15px;
+}
+#left-sidebar {
+width: 20%;
+background-color: #f2f2f2;
+}
+#right-content {
+width: 80%;
+background-color: #e6e6e6;
+margin: auto;
+}
+.form-group {
+margin-bottom: 15px;
+vertical-align: middle;
+width: 100%;
+}
+.form-group label {
+margin-right: 5px;
+margin-left: 5px;
+font-size: 12px;
+color: #555;
+}
+.form-group input {
+flex: 1;
+padding: 6px;
+border: 1px solid #ccc;
+border-radius: 4px;
+margin-left: 5px;
+width: 100%;
+}
+.form-submit {
+background-color: #89997e4b;
+color: 555;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.form-submit:hover {
+background-color: #45a049;
+}
+.button {
+display: block;
+width: 100%;
+padding: 10px;
+margin: 10px 0;
+text-align: center;
+background-color: #89997e4b;
+color: #555;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.button:hover {
+background-color: #45a049;
+}
+.logo {
+text-align: center;
+flex-grow: 1; /*Cho phần tử mở rộng để lấp đầy không gian còn lại trong container.*/
+}
+.logo img {
+width: 150px;
+}
+.search {
+order: -1; /*Đặt thứ tự hiển thị của phần tử là đầu tiên trong container.*/
+margin-right: auto; /*Đặt lề phải của phần tử là "auto", tức là căn phần tử sang cạnh trái của container.*/
+}
+.search a {
+color:#435334;
+}
+.wishlist a,
+.account a,
+.cart a {
+order: 2;
+margin: 10px;
+color:#435334;
+}
+.nav li {
+display:inline; /*Hiển thị các phần tử li theo hàng ngang*/
+margin: 3%;      
+}
+.nav{
+text-align: center;
+}
+.nav a{
+text-decoration: none; /*Loại bỏ gạch chân dưới liên kế*/
+color:black;
+font-weight: 600;  
+}
+.nav li a:hover {
+color:#5f9ea0; /*hiệu ứng đổi màu khi hover chuột vào các phần tử*/
+}
+
+#footer {
+background-color: #8C9B8F;
+display:flex;
+flex-wrap: wrap;/*Cho phép các phần tử con trong flex container xuống dòng khi không đủ không gian.*/
+justify-content: space-between;
+align-items: flex-start;
+}
+#footer .thongtin a{
+display:inline-block; /* Thiết lập phần tử hiển thị dưới dạng khối nội dung trên cùng một dòng.*/
+margin: 10px;
+color:#D9DCDA;
+font-family:Arial;
+text-decoration: none;
+transition: transform 0.3s ease; /*Tạo hiệu ứng chuyển đổi (transition) cho thuộc tính transform trong thời gian 0.3 giây với đặc tính easing để làm mượt hiệu ứng chuyển đổi*/
+}
+/* tạo hiệu ứng phát sáng khi di chuột vào thẻ a, dùng filter và tăng độ sáng brightness lên 150% */
+#footer .thongtin a:hover{
+transform: scale(1.1); /* Thay đổi tỷ lệ hiển thị của phần tử lên 110% so với kích thước ban đầu*/
+filter: brightness(150%);/*Điều chỉnh độ sáng của phần tử lên 150%*/
+}
+
+#footer a {
+color:#D9DCDA;
+text-decoration: none;
+transition: 0.3s color;
+}
+#footer a:hover {
+color: #ede9e9;
+}
+#footer ul {
+list-style: none;
+
+}
+
+footer div h4 {
+margin-bottom: 2px;
+padding:0px 0px 0 30px ;
+color:#D9DCDA;
+}
+
+
+ul.sanpham{ /*định dạng danh sách không có thứ tự có class "sanpham". loại bỏ kiểu danh sách mặc định, làm cho các mục danh sách hiển thị dưới dạng các phần tử flex và sắp xếp chúng thành một hàng với khoảng cách giữa các phần tử.*/
+    list-style: none;
+    display: flex; /*căn chỉnh và xếp chồng các phần tử con bên trong.*/
+    flex-wrap: wrap;/*Xếp chồng các phần tử con thành nhiều hàng khi không đủ không gian ngang để chứa tất cả các phần tử trên cùng một hàng.*/
+    justify-content: space-between;
+  }
+.sanpham-item{
+    border: 1px solid #BDBDBD;
+    padding: 10px 0px 0px;
+    margin-bottom: 1.5em;
+
+}
+.sanpham-item:hover {/*định dạng các phần tử có class "sanpham-item" khi được hover. Nó thay đổi viền thành 1 pixel solid #4cf799 và đặt màu nền là #ecffe7.*/
+    border: 1px solid #526d5e;
+    background: #ecffe7;
+}
+ul.sanpham li{/*định dạng các mục danh sách trong danh sách "sanpham"*/
+    flex-basis: 25%;/*mỗi mục chiếm 25% không gian có sẵn*/
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box; /*(bao gồm padding và border trong tổng chiều rộng và chiều cao của phần tử*/
+    margin-bottom: 30px;
+}
+ul.sanpham li img{/*định dạng hình ảnh trong các mục danh sách*/
+    max-width: 200px;
+    padding:10px;
+     -moz-transition: all 0.3s;
+     -webkit-transition: all 0.3s;
+     transition: all 0.3s;/*áp dụng hiệu ứng transition với thời gian 0.3 giây.*/
+}
+ul.sanpham li:hover img {/*định dạng hình ảnh trong các mục danh sách khi được hover. */
+-moz-transform: scale(1.1);
+-webkit-transform: scale(1.1);
+transform: scale(1.1);/* co giãn hình ảnh lên 1.1 lần kích thước ban đầu bằng cách sử dụng thuộc tính transform */
+}
+ul.sanpham li .sanpham-top{
+    position: relative;
+    overflow: hidden; /*ẩn bất kỳ nội dung nào vượt quá phần tử*/
+}
+ul.sanpham li .sanpham-top .sanpham-thumb{
+    display: block;
+}
+ul.sanpham li .sanpham-top .sanpham-thumb img{
+    display: block;
+}
+ul.sanpham li:hover .sanpham-top .sanpham-thumb img{
+    filter: opacity(70%);/*áp dụng một hiệu ứng filter giảm độ mờ của hình ảnh xuống còn 70%*/
+}
+ul.sanpham li .sanpham-top a.mua {
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    background-color: #366b40;
+    color: #fff;
+    padding: 10px 0px;
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    transition: 0.25s ease-in-out;/*Áp dụng hiệu ứng chuyển đổi trong thời gian 0.25 giây với chế độ chuyển đổi là "ease-in-out".*/
+    opacity: 0.85; /* Đặt độ mờ (độ trong suốt) của phần tử là 0.85 (85%).*/
+}
+ul.sanpham li:hover a.mua{
+    bottom: 0px; /*khi di chuột vị trí bottom của liên kết "Mua" được đặt thành 0px, hiển thị phần tử ở vị trí ban đầu.*/
+}
+ul.sanpham li .sanpham-info {/*Định dạng thông tin sp*/
+    padding: 10px 10px;
+}
+ul.sanpham li .sanpham-info a{
+    display: block;
     text-decoration: none;
 }
-html{
-    scroll-behavior: smooth;
-    scroll-padding-top: 5.5rem;
-    overflow-x:hidden;
+ul.sanpham li .sanpham-info a.sanpham-danhmuc{/*Định dạng danh mục sp*/
+    font-size: 13px;
+    text-transform: uppercase;/*Chuyển đổi chữ thành viết hoa.*/
+    color: #9e9e9e;
+    padding: 3px 0px;
+   
 }
-body{
-    background-color: #d9d9d9;
+ul.sanpham li .sanpham-info a.sanpham-name{/*Định dang tên sp*/
+    color: #334862;
+    padding: 3px 0px;
 }
-section{
-  padding:30px;
-}
-.btn{/*định dạng nút*/
-  color:#eef3f1;
-  font-weight: 500;
-  padding:10px;
-  font-size: 15px;
-  font-style: italic;
-  background: #54766a;
-  border-radius: 40px;
-  line-height: 50px;
-
-    left: 50%;
-    transform: translate(-50%,-50%);
-}
-.btn:hover{
-
-
+ul.sanpham li .sanpham-info .sanpham-gia{/*Định dạng giá sp*/
+    color: #111;
+    padding: 3px 0px;
+    font-weight: 600;
 }
 
+#img_card {
+    border-radius: 10px;
+    width: 100px;
+}
 
-/*Định dạng header*/
+.original-price {
+    text-decoration: line-through;
+    color: grey;
+}
+
+.discounted-price {
+    color: black;
+    font-size: 13px;
+    font-weight: bold;
+}
+.checked {
+    color: orange;
+  }
+
+
 .header{
     width:100%;
     height:100px;
@@ -62,7 +315,6 @@ section{
     border-bottom: 3px solid #337153;
 
 }
-.header .icon a,
 .header .icon i{
     cursor:pointer;
     margin-left:8px;
@@ -113,107 +365,16 @@ section{
 .header .search-form label:hover{
   color:#337153;
 }
-/*------------------------------------*/
-
-/*Định dang footer*/
-footer {
-  background-color: #8C9B8F;
-  color: #eee;
-  height:max-content;
-  line-height: 25px;
-}
-footer .container{
-display:grid;
-grid-template-columns: 35% 15% 25% 25%;
-grid-template-rows: 100px 200px;
-margin:10px;
-padding-top: 10px;
-}
-footer .container .social{
-grid-column-start:3 ;
-grid-column-end:4;
-grid-row-start: 2;
-grid-row-end: 3;
-}
-footer .container .social i{
-padding:10px;
-font-size: 20px;
-}
-footer .container .dangky{
-grid-column-start: 4;
-grid-column-end:5;
-grid-row-start: 1;
-grid-row-end: 2;
-}
-footer .container .copyright{
-grid-column:1/6;
-color:#000000;
-text-align: center;
-}
-footer .container .thongtin li {
-line-height: 45px;
-}
-
-footer .container h3{
-  color:#fff;
-  margin-bottom:10px;
-}
-footer ul{
-list-style: none;
-}
-footer a {
-color: #eee;
-transition: 0.3s color, 0.3s transform;
-}
-
-footer a:hover {
-transform: scale(1);
-filter: brightness(150%);
-color: #0e0f0e;
-text-decoration: underline;
-}
-footer input[type="email"] {
-background-color: #e8f0ea;
-border: 1px solid #e8f0ea;
-color: #626262;
-box-sizing: border-box;
-height: 40px;
-padding-left: 12px;
-}
-footer button{
-background-color:#444444;
-  border: 1px solid #444444;
-  color: #fff;
-  cursor: pointer;
-  height: 40px;
-  min-width: 60px;
-  padding: 11px 10px;
-  text-align: center;
-  transition: 0.3s background-color;
-}
-footer button:hover{
-background-color:#e8f0ea;
-color:#444444;
-}
-footer .dangky p{
-font-style: italic;
-padding-top:10px;
-}
-/*------------------------------------*/
-
-.trangchu{
-  padding:0%;
-}
 .trangchu .trangchu-slider .slide {
   width:100%;
-  padding-top: 100px;
+  padding-top: 70px;
   height:auto ;
   margin: 0 auto;
   position: relative;
 }
 .trangchu .trangchu-slider img {
    width: 100%;
-  
+  height:auto ;
 }
 .trangchu .trangchu-slider .noidung{
   position: absolute;/*Đặt phần tử .slider-text với vị trí tuyệt đối trong khung cha (.slider), điều này cho phép chúng ta điều chỉnh vị trí của phần tử theo ý muốn.*/
@@ -222,7 +383,6 @@ padding-top:10px;
   transform: translate(-50%, -50%); /*Dịch chuyển phần tử .slider-text theo chiều ngang và dọc với giá trị translate(50%, 50%). Điều này giúp căn chỉnh phần tử chính xác vào trung tâm của .slider*/
   background-color: rgba(203, 203, 206, 0.8);
   padding: 30px;
-  width:70%;
   text-align: center;
   transition: background-color 0.3s, transform 0.3s; /*Đặt hiệu ứng chuyển đổi khi hover vào phần tử .slider-text.*/
 }
@@ -327,311 +487,89 @@ padding-top:10px;
   transform: scale(1.2)
 }
 
-
-
-
-/*Workshop*/
-.workshop-trangchu {
-  background-image: url(https://i.ytimg.com/vi/74DQq51XbZ8/maxresdefault.jpg);
-  background-repeat: none;/*không lặp lại ảnh nền*/
-  background-position: center;
-  width:100%;
-  height:fit-content;
-  background-attachment: fixed; /*giữ ảnh nền cố định khi cuộn trang*/
+/*footer*/
+footer {
+    background-color: #8C9B8F;
+    color: #eee;
+    height:max-content;
+    line-height: 25px;
+  }
+footer .container{
+  display:grid;
+  grid-template-columns: 35% 15% 25% 25%;
+  grid-template-rows: 100px 200px;
+  margin:10px;
+  padding-top: 10px;
 }
-.workshop-trangchu .workshop-nd {
-  text-align: center;
-  line-height: 2.5;
-  color:#fff;
-  padding: 50px;
-  align-items: center;
+footer .container .social{
+  grid-column-start:3 ;
+  grid-column-end:4;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
-
-
-.workshop-trangchu .sign-in-button {
-  color:#020202;
-  text-decoration: none;
-  font-weight: 700;
-  font-style: italic;
+footer .container .social i{
+  padding:10px;
   font-size: 20px;
 }
-
-.sign-in-button:hover {
-  color: #fff8f8;
-} /*đổi màu chữ, nền chữ khi hover vào phần tử */
-
-
-/*danh gia*/
-.danhgia .tieude1,
-.danhgia .tieude2{
+footer .container .dangky{
+  grid-column-start: 4;
+  grid-column-end:5;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+footer .container .copyright{
+  grid-column:1/6;
+  color:#000000;
   text-align: center;
-  line-height: 40px;
 }
-.danhgia .tieude1{
-  color:#337153;
+footer .thongtin li{
+  line-height: 45px;
 }
-.danhgia .tieude2{
-  color:#366b40;
-  font-weight:lighter;
-  font-style: italic;
+
+footer .container h3{
+    color:#fff;
+    margin-bottom:10px;
 }
-.danhgia .slide{
-  padding: 32px;
-  box-shadow: #334862;
-  border: 2px solid rgba(0,0,0,.2);
-  border-radius: 16px;
-  background-color: #fff;
-  height: 320px;
-  position:relative;
+footer ul{
+  list-style: none;
 }
- 
-.danhgia .slide .fa-quote-right{
-  position:absolute;
-  top:10px;
-  right:10px;
-  font-size: 30px;
-  color:#555;
+footer a {
+  color: #eee;
+  transition: 0.3s color, 0.3s transform;
 }
-.danhgia .slide .khach{
-  display:flex;
-  gap:30px;
-  align-items: center;
-  padding-bottom: 30px;;
+
+footer a:hover {
+  transform: scale(1);
+  filter: brightness(150%);
+  color: #0e0f0e;
+  text-decoration: underline;
 }
-.danhgia .slide .khach img{
-  height:70px;
-  width:70px;
-  border-radius: 50%;
-  object-fit: cover;
+footer input[type="email"] {
+  background-color: #e8f0ea;
+  border: 1px solid #e8f0ea;
+  color: #626262;
+  box-sizing: border-box;
+  height: 40px;
+  padding-left: 12px;
 }
-.danhgia .slide .khach .ngay{
-  font-size: 10px;
-  font-weight:lighter;
-  font-style: italic;
-  padding-bottom: 8px;
-}
-.danhgia .slide .khach h4{
+footer button{
+  background-color:#444444;
+    border: 1px solid #444444;
+    color: #fff;
+    cursor: pointer;
+    height: 40px;
+    min-width: 60px;
+    padding: 11px 10px;
+    text-align: center;
+    transition: 0.3s background-color;
+  }
+footer button:hover{
+  background-color:#e8f0ea;
   color:#444444;
-  padding-bottom: 8px;
 }
-.danhgia .slide .khach i{
-  color:#337153;
-}
-.danhgia .slide p{
-  line-height:20px;
-  color:#526d5e;
-  font-size: 13px;
-}
-
-
-/*--------------------------------------------------------------*/
-/*Trang chính sách */
-.chinhsach{
-  padding:100px 30px 0px 0px;
-  background-color: rgba(162, 141, 109, 0.307);
-}
-
-
-.chinhsach .chinhsachnho{
-  display:flex;
-  text-align: center;
-  gap:30px;
-  align-items: center;
-}
-.chinhsach .chinhsachnho img{
-  opacity: 0.4;
-  width:400px;
-}
-.chinhsach .chinhsachnho .noidung{
-  color:#794D32;
-  line-height: 30px;
-}
-.chinhsach .chinhsachnho .noidung h3 {
-  padding-bottom: 40px;
-  font-size: x-large;
-}
-.chinhsach .chinhsachnho .noidung p{
+footer .dangky p{
   font-style: italic;
-}
-
-.dieukien .noidung{
-  margin:20px;
-  line-height: 30px;
-  color:#666666;
-}
-.dieukien .noidung ul{
-  list-style-type: circle;
-  padding:30px;
-}
-.dieukien .noidung h3{
-  color:#337153; 
-}
-.dieukien .doitra{
-  padding-top: 30px;
-}
-.dieukien hr {
-  border: none;
-  border-top: 2px solid #4a755e;
-  height: 0;
-}
-/*---------------------------------------------*/
-
-
-
-/* Trang workshop*/
-.workshop{
-  padding:100px 30px 0px 0px;
-  background-color: rgba(184, 177, 167, 0.307);
-}
-.workshop .workshop-dau{
-  display:flex;
-  text-align: center;
-  gap:30px;
-  align-items: center;
-}
-.workshop .workshop-dau img{
-  opacity: 0.4;
-}
-.workshop .workshop-dau .noidung{
-  color:#797979;
-  line-height: 30px;
-}
-.workshop .workshop-dau .noidung h3 {
-  padding-bottom: 40px;
-  color:#57766a;
-  font-size:30px;
-
-}
-.workshop .workshop-dau .noidung p{
-  font-style: italic;
-}
-
-.gioithieu .gth-ws{
-  display:flex;
-  align-items: center;
-}
-
-.gth-ws .khonggian .ngoaitroi p,
-.gth-ws .khonggian .trongnha p{
-  color:#6F7E78;
-  font-size: 14px;
-  font-weight: 550;
-  font-style: italic;
-  text-align: center;
-}
-
-.gth-ws .noidung{
-  padding:10px;
-  color:#6F7E78;
-  line-height: 20px;
-}
-.gth-ws .khonggian img{
-  width:300px;
-  height:200px;
-  padding:10px;
-  border-radius: 30px;
+  padding-top:10px;
 }
 
 
-
-.ws-slider{
-  background-color:#DCEADE;
-}
-.ws-slider .slide{
-  padding: 10px;
-}
-
-.ws-slider .slide  img{
-  height:200px;
-  width:250px;
-  object-fit: cover;
-  border-radius: 30px;
-  align-items: center;
-}
-
-/*đánh giá */
-.danhgiaWS h2{
-  text-align: center;
-  font-size: 30px;
-  padding:30px;
-  color:rgba(25, 86, 47, 0.83);
-}
-.trainghiem .wrapper {
-  display:flex;
-  justify-content: space-around;
-  
-}
- .trainghiem {
-  text-align: center;
-  padding-top: 20px;
- }
-
-.trainghiem .binhluan{
-  padding:20px;
-  width:30%;
-}
-
-.trainghiem .binhluan .khach{
-  display:flex;
-  gap:30px;
-  align-items: center;
-  padding-bottom: 30px;
-}
-.trainghiem .binhluan .khach img{
-  height:70px;
-  width:70px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.trainghiem .binhluan .khach .ngay{
-  font-size: 10px;
-  font-weight:lighter;
-  font-style: italic;
-  padding-bottom: 8px;
-}
-.trainghiem .binhluan .khach h4{
-  color:#444444;
-  padding-bottom: 8px;
-}
-.trainghiem .binhluan .khach i{
-  color:#337153;
-}
-.trainghiem .binhluanp{
-  line-height:20px;
-  color:#526d5e;
-}
-
-
-
-.dangkyws .lichhoatdong{
-  background-color: rgba(111, 126, 120, 0.29);
-  padding:20px;
-  color:#435334;
-  text-align: center;
-}
-
-.dangkyws .lichhoatdong h2{
-  text-align: center;
-  padding-bottom:30px;
-  color:#835239
-}
-.lichhoatdong .hoatdong{
-  display:flex;
-  justify-content: space-around;
-  gap:20px;
-  align-items: center;
-  padding-bottom: 30px;
-}
-.lichhoatdong .hoatdong .noidung{
-  padding:20px;
-  width:50%;
-  line-height: 20px;
-}
-.lichhoatdong .hoatdong .lich table,th, td{
-  border:2px solid rgb(101, 118, 104);
-  padding:8px;
-}
-.lichhoatdong .hoatdong .lich table{
-  border-collapse:collapse;
-  margin: 0 auto;
-}
