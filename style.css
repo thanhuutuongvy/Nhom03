@@ -62,6 +62,7 @@ section{
     border-bottom: 3px solid #337153;
 
 }
+.header .icon a,
 .header .icon i{
     cursor:pointer;
     margin-left:8px;
@@ -200,16 +201,19 @@ padding-top:10px;
 }
 /*------------------------------------*/
 
+.trangchu{
+  padding:0%;
+}
 .trangchu .trangchu-slider .slide {
   width:100%;
-  padding-top: 70px;
+  padding-top: 100px;
   height:auto ;
   margin: 0 auto;
   position: relative;
 }
 .trangchu .trangchu-slider img {
    width: 100%;
-  height:auto ;
+  
 }
 .trangchu .trangchu-slider .noidung{
   position: absolute;/*Đặt phần tử .slider-text với vị trí tuyệt đối trong khung cha (.slider), điều này cho phép chúng ta điều chỉnh vị trí của phần tử theo ý muốn.*/
@@ -218,6 +222,7 @@ padding-top:10px;
   transform: translate(-50%, -50%); /*Dịch chuyển phần tử .slider-text theo chiều ngang và dọc với giá trị translate(50%, 50%). Điều này giúp căn chỉnh phần tử chính xác vào trung tâm của .slider*/
   background-color: rgba(203, 203, 206, 0.8);
   padding: 30px;
+  width:70%;
   text-align: center;
   transition: background-color 0.3s, transform 0.3s; /*Đặt hiệu ứng chuyển đổi khi hover vào phần tử .slider-text.*/
 }
@@ -419,7 +424,7 @@ padding-top:10px;
 }
 
 
-
+/*--------------------------------------------------------------*/
 /*Trang chính sách */
 .chinhsach{
   padding:100px 30px 0px 0px;
@@ -469,6 +474,9 @@ padding-top:10px;
   border-top: 2px solid #4a755e;
   height: 0;
 }
+/*---------------------------------------------*/
+
+
 
 /* Trang workshop*/
 .workshop{
@@ -498,44 +506,26 @@ padding-top:10px;
   font-style: italic;
 }
 
-
-.gioithieu .khonggian{
-  display:grid;
-  grid-template-columns: 40% 60%;
-  grid-template-rows: 50% 50%;
-  margin:10px;
+.gioithieu .gth-ws{
+  display:flex;
   align-items: center;
 }
 
-.gioithieu .khonggian .ngoaitroi{
-  grid-column-start: 1;
-  grid-column-end: 2;
-  text-align: center;
-}
-.gioithieu .khonggian .trongnha{
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
-  text-align: center;
-}
-.gioithieu .khonggian .ngoaitroi p,
-.gioithieu .khonggian .trongnha p{
+.gth-ws .khonggian .ngoaitroi p,
+.gth-ws .khonggian .trongnha p{
   color:#6F7E78;
   font-size: 14px;
+  font-weight: 550;
   font-style: italic;
+  text-align: center;
 }
 
-.gioithieu .khonggian .noidung{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 3;
+.gth-ws .noidung{
+  padding:10px;
   color:#6F7E78;
   line-height: 20px;
 }
-
-.gioithieu .khonggian img{
+.gth-ws .khonggian img{
   width:300px;
   height:200px;
   padding:10px;
@@ -633,6 +623,7 @@ padding-top:10px;
   padding-bottom: 30px;
 }
 .lichhoatdong .hoatdong .noidung{
+  padding:20px;
   width:50%;
   line-height: 20px;
 }
@@ -642,4 +633,5 @@ padding-top:10px;
 }
 .lichhoatdong .hoatdong .lich table{
   border-collapse:collapse;
+  margin: 0 auto;
 }

@@ -1,4 +1,12 @@
 
+let menu = document.querySelector('#menu');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+  menu.classList.toggle('fa-times');
+  navbar.classList.toggle('active');
+}
+
 let searchForm = document.querySelector('.search-form');
 document.querySelector('#timkiem').onclick = () => {
   searchForm.classList.toggle('active');
