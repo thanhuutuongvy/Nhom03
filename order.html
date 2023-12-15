@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Tài khoản</title>
+    <title>Đơn Đang Xử lý</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -51,63 +51,51 @@
             <table>
                 <tr>
                     <td>
-                        <h3>Thông tin tài khoản</h3>
+                        <h3>Đơn đang xử lý</h3>
                     </td>
                 </tr>
             </table>
         </div>
-        <form>
-            <div class="form-group">
-                <table>
-                    <tr>
-                        <td style="width: 10%;"><label for="first-name">Tên:</label></td>
-                        <td style="width: 40%;"><input type="text" id="first-name" name="first-name" placeholder="Tên">
-                        </td>
-                        <td style="width: 10%;"><label for="last-name">Họ:</label></td>
-                        <td style="width: 40%;"><input type="text" id="last-name" name="last-name" placeholder="Họ"></td>
-                    </tr>
-                </table>
-  
-            </div>
-            <div class="form-group">
-                <table>
-                    <tr>
-                        <td style="width: 10%;"><label for="phone-number">SĐT:</label></td>
-                        <td style="width: 40%;"><input type="tel" id="phone-number" name="phone-number" placeholder="SĐT">
-                        </td>
-                        <td style="width: 10%;"><label for="email">Email:</label></td>
-                        <td style="width: 40%;"><input type="email" id="email" name="email" placeholder="Email"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="form-group">
-                <table>
-                    <tr>
-                        <td style="width: 10%;"><label for="address">Địa chỉ:</label></td>
-                        <td style="width: 90%;"><input type="text" id="address" name="address" style="flex-grow: 2;">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="form-group">
-                <table>
-                    <tr>
-                        <td style="width: 10%;"><label for="password">Mật khẩu:</label></td>
-                        <td style="width: 90%;"><input type="password" id="password" name="password" style="flex-grow: 2;">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="form-group">
-                <table>
-                    <tr>
-                        <td>
-                            <input type="submit" value="Cập nhật" class="form-submit">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </form>
+        <div>
+            <table>
+                <tr>
+                    <td style="background-color: #89997e4b;">
+                        Mã đơn: M04803
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table id="customers">
+                            <tr>
+                              <th colspan="2">Sản phẩm</th>
+                              <th>Giá</th>
+                              <th>Số lượng</th>
+                              <th>Tổng cộng</th>
+                            </tr>
+                            <tr>
+                              <td><img id="img_card" src="images/P1.jpg"></td>
+                              <td>Dĩa</td>
+                              <td>87.000đ</td>
+                              <td><input type="number" step="any" value="1"></input></td>
+                              <td>87.000đ</td>
+                            </tr>
+                            <tr>
+                              <td><img id="img_card" src="images/P2.jpg"></td>
+                              <td>Bát men</td>
+                              <td>95.000đ</td>
+                              <td><input type="number" step="any" value="1"></input></td>
+                              <td>190.000đ</td>
+                            </tr>
+                          </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="background-color: #89997e4b;">
+                        Tổng cộng: 467.000 đ
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
 </div>
 

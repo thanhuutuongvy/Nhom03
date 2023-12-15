@@ -39,52 +39,22 @@
 </div>
 
 <div id="main-content">
-    <div id="left-sidebar">
-        <button class="button">Thông tin tài khoản</button>
-        <button class="button">Sản phẩm đã mua</button>
-        <button class="button">Sản phẩm yêu thích</button>
-        <button class="button">Đơn hàng đang xử lý</button>
-        <button class="button">Đăng xuất</button>
-    </div>
     <div id="right-content">
         <div>
             <table>
                 <tr>
                     <td>
-                        <h3>Thông tin tài khoản</h3>
+                        <h3>Đăng nhập</h3>
                     </td>
                 </tr>
             </table>
         </div>
-        <form>
+        <form id="loginForm">
             <div class="form-group">
                 <table>
                     <tr>
-                        <td style="width: 10%;"><label for="first-name">Tên:</label></td>
-                        <td style="width: 40%;"><input type="text" id="first-name" name="first-name" placeholder="Tên">
-                        </td>
-                        <td style="width: 10%;"><label for="last-name">Họ:</label></td>
-                        <td style="width: 40%;"><input type="text" id="last-name" name="last-name" placeholder="Họ"></td>
-                    </tr>
-                </table>
-  
-            </div>
-            <div class="form-group">
-                <table>
-                    <tr>
-                        <td style="width: 10%;"><label for="phone-number">SĐT:</label></td>
-                        <td style="width: 40%;"><input type="tel" id="phone-number" name="phone-number" placeholder="SĐT">
-                        </td>
-                        <td style="width: 10%;"><label for="email">Email:</label></td>
-                        <td style="width: 40%;"><input type="email" id="email" name="email" placeholder="Email"></td>
-                    </tr>
-                </table>
-            </div>
-            <div class="form-group">
-                <table>
-                    <tr>
-                        <td style="width: 10%;"><label for="address">Địa chỉ:</label></td>
-                        <td style="width: 90%;"><input type="text" id="address" name="address" style="flex-grow: 2;">
+                        <td style="width: 10%;"><label for="address">Tên đăng nhập:</label></td>
+                        <td style="width: 90%;"><input type="text" placeholder="Username" id="username" required>
                         </td>
                     </tr>
                 </table>
@@ -93,7 +63,7 @@
                 <table>
                     <tr>
                         <td style="width: 10%;"><label for="password">Mật khẩu:</label></td>
-                        <td style="width: 90%;"><input type="password" id="password" name="password" style="flex-grow: 2;">
+                        <td style="width: 90%;"><input type="password" placeholder="Password" id="password" required>
                         </td>
                     </tr>
                 </table>
@@ -102,8 +72,7 @@
                 <table>
                     <tr>
                         <td>
-                            <input type="submit" value="Cập nhật" class="form-submit">
-                        </td>
+                            <button type="submit" class="form-submit">Login</button>
                     </tr>
                 </table>
             </div>
@@ -165,6 +134,23 @@
             </nav>
       </div>
     </div>
+    <script>
+        document.getElementById('loginForm').onsubmit = function(event) {
+            event.preventDefault();
+            
+            // Get user input
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
 
+            // Here you would typically check the credentials against a database
+            // For this example, we'll just check if they are non-empty
+            if(username == 'admin' && password == 'admin') {
+                // Redirect to a new page
+                window.location.href = 'index.html';
+            } else {
+                alert("Please enter both username and password");
+            }
+        };
+    </script>
 </body>
 </html>
